@@ -6,8 +6,8 @@ import { addUser } from "../utils/userSlice.js";
 import { useNavigate } from "react-router-dom";
 import {BASE_URL} from "../utils/constants.js";
 const Login = () => {
-  const [emailId, setEmailId] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailId, setEmailId] = useState("narumodi@gmail.com");
+  const [password, setPassword] = useState("Modi@1407");
   const[error,setError]=useState("");
   const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Login = () => {
     }
   }; 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center mt-32">
       <div className="card w-96 bg-base-300 card-xl shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center">Login</h2>
@@ -51,7 +51,8 @@ const Login = () => {
                 onChange={(e) => setEmailId(e.target.value)}
               />
             </label>
-            <label className="form-control w-full max-w-xs my-6">
+<div className="mt-4">
+              <label className="form-control w-full max-w-xs my-6">
               <div className="label">
                 <span className="label-text">Password</span>
               </div>
@@ -62,6 +63,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+</div>
           </div>
           <p className="text-red-600">{error}</p>
           <div className="justify-center mt-4 card-actions">

@@ -11,7 +11,7 @@ const UserCard = ({user}) => {
     <img
       src={user.photoUrl}
       alt="Shoes" 
-      className='mt-8  rounded-2xl'/>
+      className='mt-8 px-2  rounded-2xl'/>
   </figure>
   <div className="card-body">
     <h2 className="card-title">{firstName + " " + lastName}</h2>
