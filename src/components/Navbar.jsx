@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
 import { removeUser } from '../utils/userSlice';
-
+import axios from 'axios';
 const Navbar = () => {
 
 const dispatch = useDispatch();
     const user = useSelector(store=> store.user);
     const navigate = useNavigate();
-    console.log(user);
+    console.log("Logged In" , user);
 
     const handleLogout= async ()=>{
       console.log("Logout called")
@@ -17,17 +17,17 @@ const dispatch = useDispatch();
         await axios.post( BASE_URL + "/logout",{},{
           withCredentials:true,
         });
-        useDispatch(removeUser());
-        navigate("/")
+        dispatch(removeUser()); 
+        navigate("/login")
       }catch(err){
-
+console.error("Logout error:", err);
       }
     }
 
 
   return (
 
-<div className="navbar bg-base-300 shadow-sm">
+<div className="navbar bg-blue-900 shadow-sm">
   <div className="flex-1">
     <Link to="/" className="btn btn-ghost text-xl">🔗DevTinder</Link>
   </div>

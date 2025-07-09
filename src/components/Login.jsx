@@ -33,7 +33,7 @@ const Login = () => {
       setError(err?.response?.data || "Something went wrong")
       console.error(err);
     }
-  };
+  }; 
   return (
     <div className="flex justify-center mt-10">
       <div className="card w-96 bg-base-300 card-xl shadow-sm">
@@ -51,7 +51,7 @@ const Login = () => {
                 onChange={(e) => setEmailId(e.target.value)}
               />
             </label>
-            <label className="form-control w-full max-w-xs ">
+            <label className="form-control w-full max-w-xs my-6">
               <div className="label">
                 <span className="label-text">Password</span>
               </div>
