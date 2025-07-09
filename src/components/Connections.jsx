@@ -31,9 +31,9 @@ const Connections = () => {
     <div className='text-center my-10'>
       <h1 className='text-3xl  font-bold'>Connections</h1>
       {connections.map((connection)=>{
-        const {firstName , lastName ,photoUrl , age,  gender, about}=connection;
+        const {_id, firstName , lastName ,photoUrl , age,  gender, about}=connection;
         return (
-<div className="flex justify-center">
+<div key={_id} className="flex justify-center">
   <div className="card card-side ml-10 w-4/12 flex justify-center bg-yellow-700 border-r-amber-950 my-4 shadow-sm">
     <figure>
       <img
