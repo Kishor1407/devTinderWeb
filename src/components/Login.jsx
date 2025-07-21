@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants.js";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +19,13 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const user = useSelector((store) => store.user);
+
+useEffect(() => {
+  if (user) {
+    navigate("/"); 
+  }
+}, [user, navigate]);
   const handleLogin = async () => {
     try {
       const res = await axios.post(
