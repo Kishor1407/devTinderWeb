@@ -39,7 +39,7 @@ const EditProfile = ({ user }) => {
   };
   return (
     <div className="flex  overflow-hidden">
-      <div className="w-1/2 flex justify-end items-start mt-10">
+      <div className="w-1/2 flex justify-end items-start mt-2">
         <div className="card w-96 bg-base-300 card-xl shadow-sm">
           <div className="card-body">
             <h2 className="card-title justify-center">Edit Profile</h2>
